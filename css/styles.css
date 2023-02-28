@@ -1,0 +1,66 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  color: #2a2a2a;
+}
+
+.box {
+  box-sizing: border-box;
+  display: block;
+  background: grey;
+}
+
+.box::before {
+  content: "before";
+  font-size: 40px;
+  color: orange;
+}
+
+.box::after {
+  content: "after";
+  font-size: 40px;
+  color: teal;
+}
+.box:hover::before {
+  color: green;
+}
+.box:hover::after {
+  color: tomato;
+}
+.list {
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+.list-item: :not(:last-child) {
+  margin-bottom: 5px;
+}
+.list-link {
+  display: inline-flex;
+  align-items: center;
+  color: currentColor;
+  text-decoration: none;
+  font-size: 32px;
+}
+.list-link::before,
+.list-link::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+}
+.list-link::before {
+  margin-right: 16px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/599/599502.png");
+}
+.list-link::after {
+  display: none;
+  margin-left: 16px;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/599/599516.png");
+}
+.list-link:hover {
+  color: #2196f3;
+}
+.list-link:hover::after {
+  display: block;
+}
